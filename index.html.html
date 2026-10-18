@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boobesh – ECE Student Portfolio</title>
+<meta name="description" content="Portfolio of Boobesh, third-year Electronics and Communication Engineering student at VSB College of Engineering Technical Campus, Coimbatore.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Sora:wght@400;600;800&display=swap">
+<style>
+:root{--ink:#14121f;--card:rgba(255,255,255,.88);--muted:#5b5870;--line:rgba(20,18,31,.12);--acc:#6c4cff;--cy:#19c3e6;--pk:#ff5fa2;--yl:#ffe96b;--bg1:#ffb3d1;--bg2:#b9a6ff;--bg3:#8fd3ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#f3f1ff;--card:rgba(24,20,44,.86);--muted:#b4b0cc;--line:rgba(255,255,255,.14);--bg1:#5a1d4d;--bg2:#2b1b6b;--bg3:#0f3a63}}
+:root[data-theme=dark]{--ink:#f3f1ff;--card:rgba(24,20,44,.86);--muted:#b4b0cc;--line:rgba(255,255,255,.14);--bg1:#5a1d4d;--bg2:#2b1b6b;--bg3:#0f3a63}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sora,system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2) 50%,var(--bg3)) fixed;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:20;padding:10px 0;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+nav{display:flex;align-items:center;gap:6px;background:#15122b;color:#fff;border-radius:999px;padding:6px 8px;overflow-x:auto}
+nav a{padding:6px 14px;border-radius:999px;text-decoration:none;font-size:.85rem;white-space:nowrap}
+nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.16)}
+nav button{margin-left:auto;background:var(--yl);border:0;border-radius:999px;padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer;color:#14121f}
+.hero{position:relative;overflow:hidden;background:#0e0b1f;color:#fff;border-radius:28px;padding:40px 28px;min-height:360px;display:grid;align-content:end;margin-top:8px}
+.orb{position:absolute;right:-60px;top:-70px;width:420px;height:420px;border-radius:50%;background:conic-gradient(from 90deg,#ff5fa2,#6c4cff,#19c3e6,#ffe96b,#ff5fa2);filter:blur(46px);opacity:.75;animation:spin 22s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.orb{animation:none}html{scroll-behavior:auto}}
+.hero>*{position:relative}
+.hero small{font-size:1rem;opacity:.85}
+.hero h1{font-size:clamp(3rem,13vw,7rem);line-height:1;margin:6px 0 10px;font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:60ch;margin:0 0 18px;opacity:.92}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;border-radius:999px;padding:10px 20px;text-decoration:none;font-weight:600;font-size:.9rem;border:1px solid rgba(255,255,255,.4);background:transparent;color:inherit;cursor:pointer;font-family:inherit}
+.btn.p{background:var(--yl);color:#14121f;border-color:var(--yl)}
+.chip{position:absolute;top:22px;right:22px;background:var(--yl);color:#14121f;border-radius:14px;padding:8px 14px;font-size:.8rem;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:22px;padding:20px}
+.stat b{display:block;font-family:DotGothic16,monospace;font-size:3rem;line-height:1.1;font-weight:400}
+.stat span{color:var(--muted);font-size:.85rem}
+section{padding:22px 0}
+h2{font-size:1.5rem;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+h3{margin:0 0 6px;font-size:1.05rem}
+p{margin:0 0 10px}
+.muted{color:var(--muted);font-size:.92rem}
+.tag{display:inline-block;font-size:.75rem;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:2px 4px 2px 0}
+.st{font-size:.75rem;font-weight:600;border-radius:999px;padding:2px 10px;background:var(--yl);color:#14121f}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filters button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+details summary{cursor:pointer;font-weight:600;color:var(--acc);margin-top:8px}
+dl{margin:8px 0 0;font-size:.88rem}dt{font-weight:600;margin-top:6px}dd{margin:0;color:var(--muted)}
+.tl{border-left:3px solid var(--acc);padding-left:16px}
+label{display:block;font-size:.85rem;font-weight:600;margin:10px 0 4px}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:12px;padding:10px}
+.err{color:#d4264e;font-size:.8rem;min-height:1em}
+#note{margin-top:12px;padding:12px;border-radius:12px;border:1px dashed var(--line);display:none}
+footer{padding:26px 0 40px;text-align:center;color:var(--muted);font-size:.85rem}
+#top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:0;background:var(--acc);color:#fff;font-size:1.2rem;cursor:pointer;display:none}
+</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#certs">Certificates</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+<button id="theme" aria-label="Toggle dark and light theme">Theme</button></nav></div></header>
+
+<main class="wrap">
+<div class="hero" id="home">
+<div class="orb" aria-hidden="true"></div>
+<div class="chip">Open to internships</div>
+<small>Hello, I'm</small>
+<h1>BOOBESH</h1>
+<p>Third-year Electronics and Communication Engineering student at VSB College of Engineering Technical Campus, Coimbatore. I enjoy electronics, programming, embedded systems, robotics, AI and IoT, and I like building projects that solve real-world problems.</p>
+<div class="btns"><a class="btn p" href="#projects">Explore my projects</a><a class="btn" href="#resume">Download my resume</a><a class="btn" href="#contact">Contact me</a></div>
+</div>
+
+<div class="stats" aria-label="Portfolio at a glance">
+<div class="card stat"><b>3</b><span>Year of B.E. study</span></div>
+<div class="card stat"><b>5</b><span>Project ideas listed</span></div>
+<div class="card stat"><b id="skillCount">0</b><span>Skills listed</span></div>
+<div class="card stat"><b>0</b><span>Certificates added so far</span></div>
+</div>
+
+<section id="about"><h2>About me</h2>
+<div class="card"><p>I am an engineering student who likes turning ideas into practical technical solutions. My interests cover electronics, communication systems, software development, emerging technologies and hands-on projects.</p>
+<p class="muted">Boobesh · B.E. Electronics and Communication Engineering · Third year · VSB College of Engineering Technical Campus · Coimbatore, Tamil Nadu, India</p></div>
+<div class="grid" style="margin-top:12px">
+<div class="card"><h3>Academic journey</h3><p class="muted">Studying B.E. in Electronics and Communication Engineering. Add your coursework here.</p></div>
+<div class="card"><h3>Technical interests</h3><p class="muted">Electronics, embedded systems, robotics, AI, IoT, programming.</p></div>
+<div class="card"><h3>Future goals</h3><p class="muted">Add your goals here, for example the internships or roles you want.</p></div>
+</div></section>
+
+<section id="skills"><h2>Technical skills</h2>
+<p class="muted">These are topics you listed, not proficiency ratings. Add a level (Learning, Practicing or Proficient) only when you confirm it.</p>
+<div class="grid" id="skillGrid"></div></section>
+
+<section id="projects"><h2>My engineering projects</h2>
+<p class="muted">All five are project concepts. Update the status once you build something.</p>
+<div class="filters" id="filters" role="group" aria-label="Filter projects by status"></div>
+<div class="grid" id="projGrid"></div></section>
+
+<section id="education"><h2>Education</h2>
+<div class="card tl"><h3>Bachelor of Engineering (B.E.), Electronics and Communication Engineering</h3>
+<p>VSB College of Engineering Technical Campus, Coimbatore, Tamil Nadu, India · Currently in third year</p>
+<p class="muted">Admission year, expected graduation year, CGPA, coursework, achievements and workshops: to be added by you.</p></div></section>
+
+<section id="certs"><h2>Certifications and achievements</h2>
+<div class="card"><p class="muted">Nothing added yet. This section will show only certificates, courses, workshops, hackathons and awards that you provide, with issuer, date and a verification link.</p></div></section>
+
+<section id="resume"><h2>Resume</h2>
+<div class="card"><p>I am looking for internship and entry-level opportunities in electronics, embedded systems and related fields.</p>
+<p class="muted">No resume has been uploaded yet. Add your PDF as <code>resume.pdf</code> next to this page and set <code>RESUME_URL</code> in the script.</p>
+<a class="btn p" id="resumeBtn" href="#resume" style="color:#14121f">Download my resume</a>
+<p id="resumeMsg" class="muted" role="status"></p></div></section>
+
+<section id="contact"><h2>Let's connect and build something innovative!</h2>
+<div class="card"><p>I am interested in learning, collaborating on engineering projects, exploring emerging technologies, and connecting with people who share similar technical interests.</p>
+<p class="muted">Email, LinkedIn and GitHub links: to be added by you.</p>
+<form id="form" novalidate>
+<label for="n">Name</label><input id="n" autocomplete="name"><div class="err" id="en"></div>
+<label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div>
+<label for="s">Subject</label><input id="s"><div class="err" id="es"></div>
+<label for="m">Message</label><textarea id="m" rows="4"></textarea><div class="err" id="em"></div>
+<button class="btn p" style="color:#14121f;margin-top:8px" type="submit">Send message</button>
+</form>
+<div id="note" role="status"></div></div></section>
+</main>
+<footer>© Boobesh</footer>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+const RESUME_URL="";
+const SKILLS={"Programming languages":["C","Java","Python"],"Electronics and communication":["Digital electronics","Analog electronics","Circuit fundamentals","Communication systems","Microcontrollers"],"Software and development":["HTML","CSS","JavaScript","Git and GitHub"],"Emerging technologies":["Artificial intelligence","IoT","Robotics","Embedded systems","Home automation"]};
+const PROJECTS=[
+{t:"AI-based rockfall prediction for open-pit mines using UAVs",d:"A proposed monitoring system that uses drone imagery, terrain and environmental data, and machine learning to assess rockfall risk.",tech:["Python","Machine learning","Computer vision","UAV imagery"],s:"Idea"},
+{t:"Non-satellite-dependent student safety and bus arrival system",d:"A proposed system using GSM cell triangulation, RFID gateways and communication technologies for student identification and bus arrival alerts.",tech:["Embedded systems","GSM","RFID","IoT"],s:"Idea"},
+{t:"AI-enabled home automation system",d:"A proposed smart home that combines sensors, microcontrollers, mobile control and AI-assisted features.",tech:["ESP32","Sensors","IoT","Python"],s:"Idea"},
+{t:"Earthquake-stabilized dialysis system",d:"A proposed concept for stabilization and monitoring technology that keeps dialysis equipment safer during seismic events.",tech:["Sensors","Embedded systems","Control systems"],s:"Idea"},
+{t:"Robotics and automation",d:"A project area for robotic systems, motor control, sensor integration and automation experiments.",tech:["Python","Microcontrollers","Motor drivers","Robotics"],s:"Idea"}];
+const F=["Problem statement","Proposed solution","Hardware components","Software","My contribution","GitHub repository","Live demo","Documentation"];
+const $=s=>document.querySelector(s),el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.innerHTML=h;return e};
+let n=0;const g=$("#skillGrid");
+for(const[k,v]of Object.entries(SKILLS)){n+=v.length;const c=el("div","card","<h3>"+k+"</h3>");v.forEach(x=>c.append(el("span","tag",x)));g.append(c)}
+$("#skillCount").textContent=n;
+let cur="All";
+function draw(){const pg=$("#projGrid");pg.innerHTML="";
+PROJECTS.filter(p=>cur==="All"||p.s===cur).forEach(p=>{const c=el("article","card","<span class='st'>"+p.s+"</span><h3 style='margin-top:8px'>"+p.t+"</h3><p class='muted'>"+p.d+"</p>");
+p.tech.forEach(x=>c.append(el("span","tag",x)));
+c.append(el("details","","<summary>View details</summary><dl>"+F.map(f=>"<dt>"+f+"</dt><dd>Not added yet</dd>").join("")+"</dl>"));pg.append(c)});
+document.querySelectorAll("#filters button").forEach(b=>b.setAttribute("aria-pressed",b.textContent===cur))}
+["All","Idea","In progress","Prototype","Completed"].forEach(x=>{const b=el("button","",x);b.onclick=()=>{cur=x;draw()};$("#filters").append(b)});draw();
+$("#resumeBtn").onclick=e=>{if(RESUME_URL){e.preventDefault();window.open(RESUME_URL,"_blank","noopener")}else{$("#resumeMsg").textContent="Upload your resume PDF to enable this button."}};
+$("#form").onsubmit=e=>{e.preventDefault();let ok=true;
+const chk=(i,er,t)=>{$(er).textContent=t?"":"Required";if(!t)ok=false};
+chk("#n","#en",$("#n").value.trim());chk("#s","#es",$("#s").value.trim());chk("#m","#em",$("#m").value.trim());
+const em=/^\S+@\S+\.\S+$/.test($("#e").value);$("#ee").textContent=em?"":"Enter a valid email";if(!em)ok=false;
+if(ok){const o=$("#note");o.style.display="block";o.textContent="Message not sent. This form has no backend yet. Connect a service such as Supabase or Formspree to deliver messages."}};
+$("#theme").onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg1").trim()==="#5a1d4d";r.dataset.theme=d?"light":"dark"};
+const t=$("#top");addEventListener("scroll",()=>t.style.display=scrollY>600?"block":"none");t.onclick=()=>scrollTo({top:0});
+</script>
+</body></html>
